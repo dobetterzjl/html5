@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+<canvas id="canvas" width="1024" height="768" style="border:1px solid black">
+	<!-- 当前浏览器不支持，请更换浏览器 -->
+</canvas>
+	<script type="text/javascript">
+		var canvas = document.getElementById('canvas');
+		// canvas.width=1024;
+		// canvas.height=768;
+		if(canvas.getContext('2d')){
+			var context = canvas.getContext('2d');
+			context.beginPath();
+		context.moveTo(100,100);
+		context.lineTo(700,700);
+		context.lineTo(100,700);
+		context.lineTo(100,100);
+		//context.strokeStyle="#005588";
+		//context.lineWidth=5;
+		context.fillStyle="blue";
+		context.fill();
+		context.lineWidth=5;
+		context.strokeStyle="red";
+		context.stroke();
+		context.closePath();
+		context.beginPath();
+		context.moveTo(400,600);
+		context.lineTo(500,800);
+		context.lineWidth=2;
+		context.strokeStyle="pink";
+		context.stroke();
+		context.closePath();
+		//context.stroke();
+		}
+		else{
+			alert('buzhichi');
+		}
+		
+	</script>
+</body>
+</html>
