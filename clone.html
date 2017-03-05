@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	var obj1 = {name:'lisi',age:30,brother:
+	{name:'ll',age:17}};
+	//利用JSON.stringify&JSON.parse进行深度克隆
+	// var str = JSON.stringify(obj1);
+	// var obj2 = JSON.parse(str);
+	var obj2= clone(obj1);
+	obj1.name='zs';
+	console.log(obj2.brother.name);
+	//递归方式进行深度克隆
+	function clone(obj){
+		var newobj={};
+		 for(var p in obj){
+				if (typeof obj[p]=="object") {
+					newobj[p]=clone(obj[p]);
+				}else{
+					newobj[p]=obj[p];
+				}
+			}
+			return newobj;
+		 }
+
+	</script>
+</body>
+</html>
