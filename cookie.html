@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	// document.cookie='username=lisi';
+	function setCookie(key,value,day){
+		var str = key +'='+value+';';
+		if(day){
+			var now = new Date();
+			now.setDate(now.getDate()+day);
+			str+=' expires='+now;
+		}
+		document.cookie = str; 
+	}
+	function getCookie(key){
+		var str = document.cookie;//name=lisi;age=18
+		var str1 = str.split('; ');
+		for(var i =0;i<str1.length;i++){
+			var str2=str1[i].split('=');
+			if (str2[0]==key) {
+				return str2[1];
+			}
+
+		}
+	}
+	function delCookie(key){
+		setCookie(key,'',-1);
+	}
+</script>
+</body>
+</html>
